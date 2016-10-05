@@ -5,14 +5,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <mongo:mongo id="mongo" />
-    <mongo:mapping-converter base-package="main.java.br.com.pic2win.domain"/>
+    <mongo:mapping-converter base-package="main.java.br.com.cupomclick.domain"/>
 
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg ref="mongo"/>
         <constructor-arg name="databaseName" value="promoscan"/>
     </bean>
 
-    <mongo:repositories base-package="br.com.pic2win.repository" mongo-template-ref="mongoTemplate" />
+    <mongo:repositories base-package="br.com.cupomclick.repository" mongo-template-ref="mongoTemplate" />
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 
